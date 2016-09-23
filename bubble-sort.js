@@ -1,37 +1,45 @@
-function bubbleSort(array) {
-  var passCount = 0;
-  var swapCount = 0;
-  var sorted = false;
+function bubbleSort(arr) {
+  this.array = arr.map(function(element){
+    return element;
+  });
 
-  var prev = -Infinity;
-  function isBiggerThanPrev(elem) {
-    var result = (elem >= prev);
-    prev = elem;
-    return result;
-  }
+  function sort(array) {
+    var passCount = 0;
+    var swapCount = 0;
+    var sorted = false;
 
-  while(!sorted) {
+    var prev = -Infinity;
+    function isBiggerThanPrev(elem) {
+      var result = (elem >= prev);
+      prev = elem;
+      return result;
+    }
 
-    for(var i = 0; i < (array.length - 1); i++){
-      if(array[i] > array[i + 1]) {
-        swapCount++;
-        array.splice(i, 0, array.splice((i + 1), 1)[0]);
+    while(!sorted) {
+
+      for(var i = 0; i < (array.length - 1); i++){
+        if(array[i] > array[i + 1]) {
+          swapCount++;
+          array.splice(i, 0, array.splice((i + 1), 1)[0]);
+        }
       }
-    }
-    passCount++;
-
-    prev = -Infinity;
-    if(array.every(isBiggerThanPrev)) {
       passCount++;
-      sorted = true;
+
+      prev = -Infinity;
+      if(array.every(isBiggerThanPrev)) {
+        passCount++;
+        sorted = true;
+      }
+
     }
 
+    return {
+      passes: passCount,
+      swaps: swapCount
+    };
   }
 
-  return {
-    passes: passCount,
-    swaps: swapCount
-  };
+  return sort(this.array);
 }
 
 module.exports = bubbleSort;
