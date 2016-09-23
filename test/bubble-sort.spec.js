@@ -32,3 +32,16 @@ describe('bubbleSort', function() {
   });
 
 });
+
+describe('bubbleSort as extension of array prototype', function() {
+  it('should be able to be called from any array', function() {
+    expect([5, 1, 4, 2, 8].bubbleSort()).to.be.an('object');
+  });
+  it('should return the number of sorts and passes', function() {
+    expect([5, 1, 4, 2, 8].bubbleSort().passes).to.equal(3);
+    expect([5, 1, 4, 2, 8].bubbleSort().swaps).to.equal(4);
+  });
+  it('should sort the array it was called on', function() {
+    expect([5, 1, 4, 2, 8].bubbleSort().sorted).to.deep.equal([1, 2, 4, 5, 8]);
+  });
+});

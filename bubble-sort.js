@@ -1,7 +1,13 @@
-function bubbleSort(arr) {
-  this.array = arr.map(function(element){
-    return element;
-  });
+Array.prototype.bubbleSort = function(arr) {
+  if(arr !== undefined) {
+    this.array = arr.map(function(element){
+      return element;
+    });
+  } else {
+    this.array = this.map(function(element){
+      return element;
+    });
+  }
 
   function sort(array) {
     var passCount = 0;
@@ -35,11 +41,12 @@ function bubbleSort(arr) {
 
     return {
       passes: passCount,
-      swaps: swapCount
+      swaps: swapCount,
+      sorted: array
     };
   }
 
   return sort(this.array);
-}
+};
 
-module.exports = bubbleSort;
+module.exports = Array.prototype.bubbleSort;
