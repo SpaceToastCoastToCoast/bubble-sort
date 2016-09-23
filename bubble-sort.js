@@ -1,5 +1,6 @@
 function bubbleSort(array) {
-  passCount = 0;
+  var passCount = 0;
+  var swapCount = 0;
   var sorted = false;
 
   var prev = -Infinity;
@@ -13,6 +14,7 @@ function bubbleSort(array) {
 
     for(var i = 0; i < (array.length - 1); i++){
       if(array[i] > array[i + 1]) {
+        swapCount++;
         array.splice(i, 0, array.splice((i + 1), 1)[0]);
       }
     }
@@ -26,7 +28,10 @@ function bubbleSort(array) {
 
   }
 
-  return passCount;
+  return {
+    passes: passCount,
+    swaps: swapCount
+  };
 }
 
 module.exports = bubbleSort;
