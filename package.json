@@ -1,0 +1,26 @@
+{
+  "name": "bubble-sort",
+  "version": "1.0.0",
+  "description": "",
+  "main": "bubble-sort.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "mocha -R spec --bail"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SpaceToastCoastToCoast/bubble-sort.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SpaceToastCoastToCoast/bubble-sort/issues"
+  },
+  "homepage": "https://github.com/SpaceToastCoastToCoast/bubble-sort#readme",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^3.0.2"
+  }
+}
