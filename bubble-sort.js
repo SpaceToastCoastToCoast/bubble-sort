@@ -24,10 +24,11 @@ Array.prototype.bubbleSort = function(arr) {
     while(!sorted) {
 
       for(var i = 0; i < (array.length - 1); i++){
-        if(array[i] > array[i + 1]) {
+        if(!isBiggerThanPrev(array[i + 1])) {
           swapCount++;
           array.splice(i, 0, array.splice((i + 1), 1)[0]);
         }
+        prev = array[i];
       }
       passCount++;
 
