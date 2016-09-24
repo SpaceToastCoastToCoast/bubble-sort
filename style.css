@@ -1,0 +1,37 @@
+html {
+  background-color: #000000;
+  color: #aa0055;
+  padding-top: 8px;
+  font-family: sans-serif;
+  font-size: 14px;
+}
+#array {
+  position: absolute;
+  top: 92px;
+}
+#infoBox {
+  position: absolute;
+  text-align: center;
+  width: 15%;
+  min-width: 80px;
+  left: 8px;
+  top: 8px;
+  background-color: #440022;
+  padding: 8px;
+  border-radius: 16px;
+}
+.numBar {
+  border-radius: 16px;
+  display: table-cell;
+  text-align: center;
+  padding-top: 8px;
+}
+button {
+  margin: 4px;
+  padding: 4px;
+  padding-right: 8px;
+  padding-left: 8px;
+  background-color: #cc0066;
+  border: none;
+  border-radius: 8px;
+}
