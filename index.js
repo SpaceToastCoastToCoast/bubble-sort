@@ -100,9 +100,9 @@ function renderSnapshot() {
     var arrayElementDiv = document.createElement('div');
     arrayElementDiv.innerHTML = currNum;
     arrayElementDiv.className = "numBar";
-    arrayElementDiv.style.color = '#44ffcc';
-    arrayElementDiv.style.height = '32px';
-    arrayElementDiv.style.width = (currNum * 8) + 'px';
+    arrayElementDiv.style.color = 'white';
+    arrayElementDiv.style.width = '16px';
+    arrayElementDiv.style.height = (currNum * 8) + 4 + 'px';
     arrayElementDiv.style.backgroundColor = 'rgb(' + ((currNum + 2) * 16) + ', ' + 0 + ', ' + ((currNum + 2) * 8) + ')';
     arrayDiv.appendChild(arrayElementDiv);
   }

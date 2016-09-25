@@ -5,26 +5,43 @@ html {
   font-family: sans-serif;
   font-size: 14px;
 }
+#main {
+  display: block;
+  width: 800px;
+  min-width: 600px;
+  margin: auto;
+}
 #array {
-  position: absolute;
-  top: 92px;
+  position: relative;
+  top: 16px;
+  left: 0px;
+  width: 780px;
 }
 #infoBox {
-  position: absolute;
+  position: relative;
   text-align: center;
+  margin: auto;
   width: 15%;
   min-width: 80px;
-  left: 8px;
-  top: 8px;
   background-color: #440022;
+  color: white;
   padding: 8px;
   border-radius: 16px;
+  border: 2px solid white;
+  text-shadow: 0 0 6px #FF0088, 0 0 12px #FF0088, 0 0 2px #FFFFFF;
+  box-shadow: 0 0 6px #FF0088, 0 0 12px #FF0088, 0 0 2px #FFFFFF;
 }
 .numBar {
+  position: relative;
+  margin: 4px;
+  font-weight: bold;
+  border: 2px solid white;
   border-radius: 16px;
-  display: table-cell;
+  display: inline-flex;
   text-align: center;
-  padding-top: 8px;
+  padding: 4px;
+  text-shadow: 0 0 6px #FF0088, 0 0 12px #FF0088, 0 0 2px #FFFFFF;
+  box-shadow: 0 0 6px #FF0088, 0 0 12px #FF0088, 0 0 2px #FFFFFF;
 }
 button {
   margin: 4px;
@@ -32,6 +49,9 @@ button {
   padding-right: 8px;
   padding-left: 8px;
   background-color: #cc0066;
-  border: none;
   border-radius: 8px;
+  color: white;
+  border: 2px solid white;
+  text-shadow: 0 0 6px #FF0088, 0 0 12px #FF0088, 0 0 2px #FFFFFF;
+  box-shadow: 0 0 6px #FF0088, 0 0 12px #FF0088, 0 0 2px #FFFFFF;
 }
