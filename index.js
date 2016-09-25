@@ -62,23 +62,28 @@ function bubSort(arr) {
 }
 
 //generate a new array on page load
-var exampleArray = new Array(10).fill(0);
+function arrayMaker() {
+  var exampleArray = new Array(10).fill(0);
 
-exampleArray = exampleArray.map(function(element, index) {
-  return (index + 1);
-});
+  exampleArray = exampleArray.map(function(element, index) {
+    return (index + 1);
+  });
 
-exampleArray.sort(function() {
-  return (0.5 - Math.random());
-});
+  exampleArray.sort(function() {
+    return (0.5 - Math.random());
+  });
 
-exampleArray.reverse();
+  exampleArray.reverse();
 
-exampleArray.sort(function() {
-  return (0.5 - Math.random());
-});
+  exampleArray.sort(function() {
+    return (0.5 - Math.random());
+  });
+  return exampleArray;
+}
 
-var snapshots = bubSort(exampleArray);
+var ourArray = arrayMaker();
+
+var snapshots = bubSort(ourArray);
 var snapID = 0;
 var arrayDiv = document.getElementById('array');
 var snapInfoDiv = document.getElementById('snapInfo');
@@ -110,23 +115,9 @@ var renderInterval = setInterval(renderSnapshot, 750);
 resetButton.addEventListener('click', function(){
   arrayDiv.innerHTML = "";
   snapID = 0;
-  exampleArray = new Array(10).fill(0);
-
-  exampleArray = exampleArray.map(function(element, index) {
-    return (index + 1);
-  });
-
-  exampleArray.sort(function() {
-    return (0.5 - Math.random());
-  });
-
-  exampleArray.reverse();
-
-  exampleArray.sort(function() {
-    return (0.5 - Math.random());
-  });
+  ourArray = arrayMaker();
 
   clearInterval(renderInterval);
-  snapshots = bubSort(exampleArray);
+  snapshots = bubSort(ourArray);
   renderInterval = setInterval(renderSnapshot, 750);
 });
