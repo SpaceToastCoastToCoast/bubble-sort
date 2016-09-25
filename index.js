@@ -9,6 +9,14 @@ function bubSort(arr) {
     var swapCount = 0;
     var sorted = false;
 
+    states.push({
+      passes: passCount,
+      swaps: swapCount,
+      sorted: array.map(function(element){
+                return element;
+              })
+    });
+
     var prev = -Infinity;
     function isBiggerThanPrev(elem) {
       var result = (elem >= prev);
@@ -56,12 +64,21 @@ function bubSort(arr) {
 //generate a new array on page load
 var exampleArray = new Array(10).fill(0);
 
-  exampleArray = exampleArray.map(function(element) {
-    return element + Math.floor((Math.random() * 10) + 1);
-  });
+exampleArray = exampleArray.map(function(element, index) {
+  return (index + 1);
+});
+
+exampleArray.sort(function() {
+  return (0.5 - Math.random());
+});
+
+exampleArray.reverse();
+
+exampleArray.sort(function() {
+  return (0.5 - Math.random());
+});
 
 var snapshots = bubSort(exampleArray);
-console.log(snapshots);
 var snapID = 0;
 var arrayDiv = document.getElementById('array');
 var snapInfoDiv = document.getElementById('snapInfo');
@@ -88,20 +105,28 @@ function renderSnapshot() {
   snapID++;
 }
 
-console.log('works');
-
-var renderInterval = setInterval(renderSnapshot, 1000);
+var renderInterval = setInterval(renderSnapshot, 750);
 
 resetButton.addEventListener('click', function(){
   arrayDiv.innerHTML = "";
   snapID = 0;
   exampleArray = new Array(10).fill(0);
 
-  exampleArray = exampleArray.map(function(element) {
-    return element + Math.floor((Math.random() * 10) + 1);
+  exampleArray = exampleArray.map(function(element, index) {
+    return (index + 1);
+  });
+
+  exampleArray.sort(function() {
+    return (0.5 - Math.random());
+  });
+
+  exampleArray.reverse();
+
+  exampleArray.sort(function() {
+    return (0.5 - Math.random());
   });
 
   clearInterval(renderInterval);
   snapshots = bubSort(exampleArray);
-  renderInterval = setInterval(renderSnapshot, 1000);
+  renderInterval = setInterval(renderSnapshot, 750);
 });
