@@ -101,8 +101,8 @@ function renderSnapshot() {
     arrayElementDiv.innerHTML = currNum;
     arrayElementDiv.className = "numBar";
     arrayElementDiv.style.color = 'white';
-    arrayElementDiv.style.width = '16px';
-    arrayElementDiv.style.height = (currNum * 8) + 4 + 'px';
+    arrayElementDiv.style.width = '32px';
+    arrayElementDiv.style.height = (currNum * 16) + 4 + 'px';
     arrayElementDiv.style.backgroundColor = 'rgb(' + ((currNum + 2) * 16) + ', ' + 0 + ', ' + ((currNum + 2) * 8) + ')';
     arrayDiv.appendChild(arrayElementDiv);
   }

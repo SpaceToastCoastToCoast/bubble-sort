@@ -1,9 +1,12 @@
+@import 'https://fonts.googleapis.com/css?family=Comfortaa';
+
 html {
   background-color: #000000;
+  background-image: url("_original.jpg");
   color: #aa0055;
   padding-top: 8px;
-  font-family: sans-serif;
-  font-size: 14px;
+  font-family: "Comfortaa", sans-serif;
+  font-size: 18px;
 }
 #main {
   display: block;
@@ -12,10 +15,10 @@ html {
   margin: auto;
 }
 #array {
+  display: flex;
   position: relative;
-  top: 16px;
-  left: 0px;
-  width: 780px;
+  margin: auto;
+  width: 360px;
 }
 #infoBox {
   position: relative;
@@ -34,6 +37,7 @@ html {
 .numBar {
   position: relative;
   margin: 4px;
+  flex-grow: 1;
   font-weight: bold;
   border: 2px solid white;
   border-radius: 16px;
@@ -44,6 +48,7 @@ html {
   box-shadow: 0 0 6px #FF0088, 0 0 12px #FF0088, 0 0 2px #FFFFFF;
 }
 button {
+  font-family: "Comfortaa", sans-serif;
   margin: 4px;
   padding: 4px;
   padding-right: 8px;
