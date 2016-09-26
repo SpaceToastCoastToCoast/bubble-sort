@@ -89,11 +89,7 @@ var arrayDiv = document.getElementById('array');
 var snapInfoDiv = document.getElementById('snapInfo');
 var resetButton = document.getElementById('resetButton');
 
-function renderSnapshot() {
-  if(snapID >= snapshots.length) {
-    clearInterval(renderInterval);
-    return;
-  }
+function init(){
   arrayDiv.innerHTML = "";
   for(var s in snapshots[snapID].sorted) {
     var currNum = snapshots[snapID].sorted[s];
@@ -107,9 +103,26 @@ function renderSnapshot() {
     arrayDiv.appendChild(arrayElementDiv);
   }
   snapInfoDiv.innerHTML = 'Swaps: ' + snapshots[snapID].swaps +'<br />Passes: ' + snapshots[snapID].passes;
+}
+
+function renderSnapshot() {
+  if(snapID >= snapshots.length) {
+    clearInterval(renderInterval);
+    return;
+  }
+  var numBars = document.querySelectorAll('.numBar');
+  for(var s in snapshots[snapID].sorted) {
+    var currNum = snapshots[snapID].sorted[s];
+    var arrayElementDiv = numBars[s];
+    arrayElementDiv.innerHTML = currNum;
+    arrayElementDiv.style.height = (currNum * 16) + 4 + 'px';
+    arrayElementDiv.style.backgroundColor = 'rgb(' + ((currNum + 2) * 16) + ', ' + 0 + ', ' + ((currNum + 2) * 8) + ')';
+  }
+  snapInfoDiv.innerHTML = 'Swaps: ' + snapshots[snapID].swaps +'<br />Passes: ' + snapshots[snapID].passes;
   snapID++;
 }
 
+init();
 var renderInterval = setInterval(renderSnapshot, 750);
 
 resetButton.addEventListener('click', function(){
@@ -119,5 +132,6 @@ resetButton.addEventListener('click', function(){
 
   clearInterval(renderInterval);
   snapshots = bubSort(ourArray);
+  init();
   renderInterval = setInterval(renderSnapshot, 750);
 });

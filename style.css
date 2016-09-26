@@ -20,6 +20,8 @@ html {
   position: relative;
   margin: auto;
   width: 360px;
+  min-height: 200px;
+  align-items: flex-end;
 }
 #infoBox {
   position: relative;
@@ -45,6 +47,7 @@ html {
   display: inline-flex;
   text-align: center;
   padding: 4px;
+  transition: height 0.4s, background-color 0.5s;
   text-shadow: 0 0 6px #FF0088, 0 0 12px #FF0088, 0 0 2px #FFFFFF;
   box-shadow: 0 0 6px #FF0088, 0 0 12px #FF0088, 0 0 2px #FFFFFF;
 }
